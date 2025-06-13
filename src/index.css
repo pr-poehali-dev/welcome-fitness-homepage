@@ -138,3 +138,93 @@
     background-clip: text;
   }
 }
+
+/* Анимации для тренажёрного зала */
+@keyframes exercise-complete {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes timer-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes progress-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width);
+  }
+}
+
+@keyframes rep-counter-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Кастомные классы для анимаций */
+.exercise-complete {
+  animation: exercise-complete 0.3s ease-in-out;
+}
+
+.timer-pulse {
+  animation: timer-pulse 1s ease-in-out infinite;
+}
+
+.progress-fill {
+  animation: progress-fill 0.5s ease-out forwards;
+}
+
+.rep-counter-bounce {
+  animation: rep-counter-bounce 0.2s ease-in-out;
+}
+
+/* Стили для элементов тренажёрного зала */
+.gym-gradient {
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+}
+
+.exercise-card {
+  transition: all 0.3s ease;
+}
+
+.exercise-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.weight-input {
+  transition: all 0.2s ease;
+}
+
+.weight-input:focus {
+  transform: scale(1.05);
+}
+
+/* Стили для круглого прогресс-бара */
+.circular-progress {
+  transform: rotate(-90deg);
+}
+
+.circular-progress circle {
+  transition: stroke-dashoffset 0.5s ease;
+}
